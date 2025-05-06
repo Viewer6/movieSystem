@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: movieSystem
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/mybatis_test?characterEncoding=utf8&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mybatis-plus:
+    configuration: # 配置打印 MyBatis日志
+      map-underscore-to-camel-case: true
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    mapper-locations: "classpath*:/mapper/**.xml" # Mapper.xml
+
+
+logging:
+  file:
+    name: logs/springboot.log
+  logback:
+    rollingpolicy:
+      max-file-size: 1KB
+      file-name-pattern: ${LOG_FILE}.%d{yyyy-MM-dd}.%i
+  level:
+    com:
+      example:
+        demo: debug
