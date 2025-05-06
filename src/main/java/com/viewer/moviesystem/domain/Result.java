@@ -7,14 +7,14 @@ import lombok.Data;
 @Data
 public class Result<T> {
     private Integer code;
-    private String errMeg;
+    private String message;
     private T data;
 
     public static  <T> Result<T> success(T data){
         Result<T> result = new Result<>();
 
         result.setCode(ResultCode.SUCCESS.getCode());
-        result.setErrMeg(ResultCode.SUCCESS.getMeg());
+        result.setMessage(ResultCode.SUCCESS.getMeg());
         result.setData(data);
 
         return result;
@@ -23,7 +23,7 @@ public class Result<T> {
         Result<T> result = new Result<>();
 
         result.setCode(ResultCode.ERROR.getCode());
-        result.setErrMeg(ResultCode.ERROR.getMeg());
+        result.setMessage(ResultCode.ERROR.getMeg());
         result.setData(data);
 
         return result;
@@ -36,7 +36,7 @@ public class Result<T> {
     public static  <T>  Result<T> fail(Integer code, String msg){
         Result<T> result = new Result<>();
         result.setCode(code);
-        result.setErrMeg(msg);
+        result.setMessage(msg);
 
         return result;
     }
@@ -45,7 +45,7 @@ public class Result<T> {
         Result<T> result = new Result<>();
 
         result.setCode(failedLogin.getCode());
-        result.setErrMeg(failedLogin.getMeg());
+        result.setMessage(failedLogin.getMeg());
         result.setData(data);
 
         return result;
