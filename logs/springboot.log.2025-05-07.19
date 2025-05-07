@@ -1,0 +1,6 @@
+2025-05-07T09:10:33.426+08:00  INFO 80532 --- [movieSystem] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-07T09:10:33.437+08:00  INFO 80532 --- [movieSystem] [main] c.v.moviesystem.MovieSystemApplication   : Started MovieSystemApplication in 1.621 seconds (process running for 2.117)
+2025-05-07T09:10:39.535+08:00  INFO 80532 --- [movieSystem] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-07T09:10:39.536+08:00  INFO 80532 --- [movieSystem] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-07T09:10:39.542+08:00  INFO 80532 --- [movieSystem] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-05-07T09:10:39.603+08:00  INFO 80532 --- [movieSystem] [http-nio-8080-exec-1] c.v.m.controller.LoginController         : 登录用户名: 1, 密码: 1

@@ -1,0 +1,6 @@
+2025-05-07T09:28:16.389+08:00  INFO 80532 --- [movieSystem] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-07T09:28:16.395+08:00  INFO 80532 --- [movieSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-07T09:28:16.401+08:00  INFO 80532 --- [movieSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-07T09:28:20.728+08:00  INFO 94608 --- [movieSystem] [main] c.v.moviesystem.MovieSystemApplication   : Starting MovieSystemApplication using Java 17.0.12 with PID 94608 (E:\Programing\MovieBackstageManagementSystem3\movieSystem\target\classes started by 26581 in E:\Programing\MovieBackstageManagementSystem3\movieSystem)
+2025-05-07T09:28:20.730+08:00  INFO 94608 --- [movieSystem] [main] c.v.moviesystem.MovieSystemApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-05-07T09:28:21.390+08:00  INFO 94608 --- [movieSystem] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)

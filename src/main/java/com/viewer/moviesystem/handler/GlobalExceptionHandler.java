@@ -3,6 +3,7 @@ package com.viewer.moviesystem.handler;
 
 import com.viewer.moviesystem.domain.Result;
 import com.viewer.moviesystem.emuns.ResultCode;
+import com.viewer.moviesystem.exception.ServiceException;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
@@ -38,6 +39,16 @@ public class GlobalExceptionHandler
     }
 
     /**
+     * service自定义异常
+     */
+    @ExceptionHandler(ServiceException.class)
+    public Result<?> handleServiceException(ServiceException e, HttpServletRequest request) {
+        String requestURI = request.getRequestURI();
+        log.error("请求地址'{}',发⽣{}异常.", requestURI, e.getMsg());
+        return Result.fail(e.getCode(), e.getMsg());
+    }
+
+    /**
      * 系统异常
      */
     @ExceptionHandler(Exception.class)
@@ -46,4 +57,5 @@ public class GlobalExceptionHandler
         log.error("请求地址'{}',发⽣异常.", requestURI, e);
         return Result.fail(ResultCode.ERROR);
     }
+
 }

@@ -1,0 +1,6 @@
+2025-05-07T09:28:30.361+08:00  INFO 94608 --- [movieSystem] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-07T09:28:30.432+08:00  INFO 94608 --- [movieSystem] [http-nio-8080-exec-1] c.v.m.controller.LoginController         : 登录用户名: 1, 密码: 1
+2025-05-07T09:28:30.502+08:00  INFO 94608 --- [movieSystem] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-07T09:28:30.626+08:00  INFO 94608 --- [movieSystem] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@61f0fb28
+2025-05-07T09:28:30.628+08:00  INFO 94608 --- [movieSystem] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-07T09:31:14.604+08:00  INFO 94608 --- [movieSystem] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete

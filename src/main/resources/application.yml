@@ -2,9 +2,9 @@ spring:
   application:
     name: movieSystem
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/mybatis_test?characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://127.0.0.1:33062/movie?characterEncoding=utf8&useSSL=false
     username: root
-    password: root
+    password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
   mybatis-plus:
     configuration: # 配置打印 MyBatis日志

@@ -1,0 +1,6 @@
+2025-05-07T09:28:21.442+08:00  INFO 94608 --- [movieSystem] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 679 ms
+2025-05-07T09:28:21.961+08:00  INFO 94608 --- [movieSystem] [main] m.e.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2e61d218
+2025-05-07T09:28:22.032+08:00  INFO 94608 --- [movieSystem] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-07T09:28:22.039+08:00  INFO 94608 --- [movieSystem] [main] c.v.moviesystem.MovieSystemApplication   : Started MovieSystemApplication in 1.687 seconds (process running for 2.17)
+2025-05-07T09:28:30.360+08:00  INFO 94608 --- [movieSystem] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-07T09:28:30.360+08:00  INFO 94608 --- [movieSystem] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'

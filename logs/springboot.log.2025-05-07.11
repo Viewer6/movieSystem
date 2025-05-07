@@ -1,0 +1,7 @@
+2025-05-07T09:07:07.454+08:00  INFO 75308 --- [movieSystem] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-07T09:07:07.463+08:00  INFO 75308 --- [movieSystem] [main] c.v.moviesystem.MovieSystemApplication   : Started MovieSystemApplication in 1.817 seconds (process running for 2.417)
+2025-05-07T09:08:05.355+08:00  INFO 75308 --- [movieSystem] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-07T09:08:05.356+08:00  INFO 75308 --- [movieSystem] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-07T09:08:05.360+08:00  INFO 75308 --- [movieSystem] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-07T09:08:05.421+08:00  INFO 75308 --- [movieSystem] [http-nio-8080-exec-1] c.v.m.controller.LoginController         : 1
+2025-05-07T09:08:05.481+08:00  INFO 75308 --- [movieSystem] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
