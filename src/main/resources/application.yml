@@ -19,7 +19,7 @@ logging:
   logback:
     rollingpolicy:
       max-file-size: 1KB
-      file-name-pattern: ${LOG_FILE}.%d{yyyy-MM-dd}.%i
+      file-name-pattern: ${LOG_FILE}.%d{yyyy-MM-dd}
   level:
     com:
       example:

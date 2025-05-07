@@ -1,6 +1,0 @@
-2025-05-07T09:08:47.813+08:00  INFO 77688 --- [movieSystem] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@256f4c14
-2025-05-07T09:08:47.820+08:00  INFO 77688 --- [movieSystem] [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-07T09:08:47.852+08:00 ERROR 77688 --- [movieSystem] [http-nio-8080-exec-1] c.v.m.handler.GlobalExceptionHandler     : 请求地址'/user/login',发⽣用户不存在异常.
-2025-05-07T09:10:27.758+08:00  INFO 77688 --- [movieSystem] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-05-07T09:10:28.111+08:00  INFO 77688 --- [movieSystem] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-05-07T09:10:28.114+08:00  INFO 77688 --- [movieSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
