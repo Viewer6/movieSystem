@@ -13,4 +13,6 @@ public interface IUserService {
     int register(RegisterDTO registerDTO);
 
     List<UserListVO> getList(UserListDTO userListDTO);
+
+    int alterRole(Long id, String roleCN);
 }
