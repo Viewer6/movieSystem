@@ -17,7 +17,9 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements IUserService {
@@ -58,10 +60,7 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public int alterRole(Long id, String roleCN) {
-        User user = userMapper.selectById(id);
-        if(user == null){
-            throw new ServiceException(ResultCode.FAILED_USER_NOT_EXISTS);
-        }
+        User user = searchUser(id);
         return userMapper.update(new LambdaUpdateWrapper<User>()
                 .eq(User::getId, id)
                 .set(User::getRole, roleCN.equals("管理员") ? 0 : 1));
@@ -69,12 +68,36 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public int alterStatus(Long id) {
+        User user = searchUser(id);
+        return userMapper.update(new LambdaUpdateWrapper<User>()
+                .eq(User::getId, id)
+                .set(User::getStatus, user.getStatus() == 0 ? 1 : 0));
+    }
+
+    @Override
+    public int delete(Long id) {
+        User user = searchUser(id);
+        return userMapper.deleteById(id);
+    }
+
+    @Override
+    public int deleteSelect(String ids) {
+        List<Long> idList = Arrays.stream(ids.split(","))
+                .map(Long::parseLong)
+                .collect(Collectors.toList());
+
+        List<User> users = userMapper.selectByIds(idList);
+        if (CollectionUtil.isEmpty(users)){
+            throw new ServiceException(ResultCode.FAILED_USER_NOT_EXISTS);
+        }
+        return userMapper.deleteByIds(idList);
+    }
+
+    private User searchUser(Long id){
         User user = userMapper.selectById(id);
         if(user == null){
             throw new ServiceException(ResultCode.FAILED_USER_NOT_EXISTS);
         }
-        return userMapper.update(new LambdaUpdateWrapper<User>()
-                .eq(User::getId, id)
-                .set(User::getStatus, user.getStatus() == 0 ? 1 : 0));
+        return user;
     }
 }

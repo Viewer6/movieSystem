@@ -17,4 +17,8 @@ public interface IUserService {
     int alterRole(Long id, String roleCN);
 
     int alterStatus(Long id);
+
+    int delete(Long id);
+
+    int deleteSelect(String ids);
 }

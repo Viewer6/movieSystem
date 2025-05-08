@@ -14,6 +14,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Slf4j
 @RestController
 @RequestMapping("/user")
@@ -59,5 +61,15 @@ public class UserController extends BaseController{
     @PostMapping("/alterRole")
     public Result<Void> alterRole(Long id, String roleCN){
         return getResult(userService.alterRole(id, roleCN));
+    }
+
+    @DeleteMapping("/delete")
+    public Result<Void> delete(Long id){
+        return getResult(userService.delete(id));
+    }
+
+    @DeleteMapping("/deleteSelect")
+    public Result<Void> deleteSelect(@RequestParam("ids") String ids){
+        return getResult(userService.deleteSelect(ids));
     }
 }
