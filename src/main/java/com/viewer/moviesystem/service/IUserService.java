@@ -15,4 +15,6 @@ public interface IUserService {
     List<UserListVO> getList(UserListDTO userListDTO);
 
     int alterRole(Long id, String roleCN);
+
+    int alterStatus(Long id);
 }

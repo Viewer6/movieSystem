@@ -50,6 +50,11 @@ public class UserController extends BaseController{
         return getTableDataInfo(userService.getList(userListDTO));
     }
 
+    @PostMapping("/alterStatus")
+    public Result<Void> alterStatus(Long id){
+        return getResult(userService.alterStatus(id));
+    }
+
     @PostMapping("/alterRole")
     public Result<Void> alterRole(Long id, String roleCN){
         return getResult(userService.alterRole(id, roleCN));

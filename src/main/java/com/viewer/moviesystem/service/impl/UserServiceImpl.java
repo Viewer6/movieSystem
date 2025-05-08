@@ -41,7 +41,7 @@ public class UserServiceImpl implements IUserService {
     public int register(RegisterDTO registerDTO) {
         List<User> users =
                 userMapper.selectList(new LambdaQueryWrapper<User>()
-                .eq(User::getUsername, registerDTO.getUsername()).eq(User::getStatus, 1));
+                .eq(User::getUsername, registerDTO.getUsername()));
         if(CollectionUtil.isNotEmpty(users)){
             throw new ServiceException(ResultCode.AILED_USER_EXISTS);
         }
@@ -65,5 +65,16 @@ public class UserServiceImpl implements IUserService {
         return userMapper.update(new LambdaUpdateWrapper<User>()
                 .eq(User::getId, id)
                 .set(User::getRole, roleCN.equals("管理员") ? 0 : 1));
+    }
+
+    @Override
+    public int alterStatus(Long id) {
+        User user = userMapper.selectById(id);
+        if(user == null){
+            throw new ServiceException(ResultCode.FAILED_USER_NOT_EXISTS);
+        }
+        return userMapper.update(new LambdaUpdateWrapper<User>()
+                .eq(User::getId, id)
+                .set(User::getStatus, user.getStatus() == 0 ? 1 : 0));
     }
 }
