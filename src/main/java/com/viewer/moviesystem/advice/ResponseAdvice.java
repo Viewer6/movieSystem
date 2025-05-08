@@ -2,6 +2,7 @@ package com.viewer.moviesystem.advice;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.viewer.moviesystem.domain.Result;
+import com.viewer.moviesystem.domain.TableDataInfo;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.MethodParameter;
@@ -24,6 +25,9 @@ public class ResponseAdvice implements ResponseBodyAdvice {
     @Override
     public Object beforeBodyWrite(Object body, MethodParameter returnType, MediaType selectedContentType, Class selectedConverterType, ServerHttpRequest request, ServerHttpResponse response) {
         if (body instanceof Result<?>){
+            return body;
+        }
+        if (body instanceof TableDataInfo){
             return body;
         }
         if (body instanceof String){

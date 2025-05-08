@@ -2,9 +2,12 @@ package com.viewer.moviesystem.service.impl;
 
 import cn.hutool.core.collection.CollectionUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.github.pagehelper.PageHelper;
 import com.viewer.moviesystem.domain.User;
 import com.viewer.moviesystem.domain.dto.LoginDTO;
 import com.viewer.moviesystem.domain.dto.RegisterDTO;
+import com.viewer.moviesystem.domain.dto.UserListDTO;
+import com.viewer.moviesystem.domain.vo.UserListVO;
 import com.viewer.moviesystem.emuns.ResultCode;
 import com.viewer.moviesystem.exception.ServiceException;
 import com.viewer.moviesystem.mapper.UserMapper;
@@ -44,5 +47,11 @@ public class UserServiceImpl implements IUserService {
         User user = new User();
         BeanUtils.copyProperties(registerDTO, user);
         return userMapper.insert(user);
+    }
+
+    @Override
+    public List<UserListVO> getList(UserListDTO userListDTO) {
+        PageHelper.startPage(userListDTO.getPageNum(), userListDTO.getPageSize());
+        return userMapper.selectUserList(userListDTO);
     }
 }

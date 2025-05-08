@@ -1,8 +1,10 @@
 package com.viewer.moviesystem.controller;
 
 import com.viewer.moviesystem.domain.Result;
+import com.viewer.moviesystem.domain.TableDataInfo;
 import com.viewer.moviesystem.domain.dto.LoginDTO;
 import com.viewer.moviesystem.domain.dto.RegisterDTO;
+import com.viewer.moviesystem.domain.dto.UserListDTO;
 import com.viewer.moviesystem.service.impl.UserServiceImpl;
 import com.viewer.moviesystem.utils.CaptchaUtil;
 import jakarta.servlet.http.HttpServletResponse;
@@ -41,5 +43,10 @@ public class UserController extends BaseController{
     @RequestMapping("/check")
     public Boolean check(String captcha, HttpSession session){
         return captchaUtil.check(captcha, session);
+    }
+
+    @GetMapping("/getList")
+    public TableDataInfo getList(UserListDTO userListDTO){
+        return getTableDataInfo(userService.getList(userListDTO));
     }
 }
