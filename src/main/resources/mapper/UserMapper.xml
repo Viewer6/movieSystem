@@ -16,7 +16,7 @@
         user
         <where>
             <if test="title !=null and title !='' ">
-                AND te.title LIKE CONCAT('%',#{title},'%')
+                AND username LIKE CONCAT('%',#{title},'%')
             </if>
         </where>
         ORDER BY

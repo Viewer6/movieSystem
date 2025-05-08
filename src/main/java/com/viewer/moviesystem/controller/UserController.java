@@ -50,8 +50,9 @@ public class UserController extends BaseController{
         return getTableDataInfo(userService.getList(userListDTO));
     }
 
-    @PostMapping("/alterStatus")
+    @PutMapping ("/alterStatus")
     public Result<Void> alterStatus(Long id){
+        log.info("修改状态id: {}", id);
         return getResult(userService.alterStatus(id));
     }
 

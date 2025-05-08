@@ -1,9 +1,13 @@
 package com.viewer.moviesystem.domain.vo;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Data;
 
 @Data
 public class UserListVO {
+
+    @JsonSerialize(using = ToStringSerializer.class)
     private Long id;              // 雪花算法生成的主键ID
     private String username;      // 用户名
     private String password;      // 密码
