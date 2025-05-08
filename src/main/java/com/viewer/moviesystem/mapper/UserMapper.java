@@ -5,5 +5,5 @@ import com.viewer.moviesystem.domain.User;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface LoginMapper extends BaseMapper<User> {
+public interface UserMapper extends BaseMapper<User> {
 }
