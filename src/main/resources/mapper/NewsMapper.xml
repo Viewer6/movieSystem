@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.viewer.moviesystem.mapper.NewsMapper">
+    <select id="selectNewsList" resultType="com.viewer.moviesystem.domain.vo.NewsListVO">
+        SELECT 
+            n.id,
+            n.news_title as newsTitle,
+            n.news_category as newsCategory,
+            n.news_content as newsContent,
+            n.event_date as eventDate
+        FROM news n
+        <where>
+            <if test="dto.newsTitle != null and dto.newsTitle != ''">
+                AND n.news_title LIKE CONCAT('%', #{dto.newsTitle}, '%')
+            </if>
+        </where>
+        ORDER BY n.create_time DESC
+    </select>
+</mapper> 

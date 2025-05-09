@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.viewer.moviesystem.mapper.MovieCategoryMapper">
+    <select id="selectMovieCategoryList" resultType="com.viewer.moviesystem.domain.vo.MovieCategoryListVO">
+        SELECT 
+            mc.id,
+            mc.category_name as categoryName,
+            u1.username as createBy,
+            mc.create_time as createTime
+        FROM movie_category mc
+        LEFT JOIN user u1 ON mc.create_by = u1.id
+        <where>
+            <if test="dto.categoryName != null and dto.categoryName != ''">
+                AND mc.category_name LIKE CONCAT('%', #{dto.categoryName}, '%')
+            </if>
+        </where>
+        ORDER BY mc.create_time DESC
+    </select>
+</mapper> 
