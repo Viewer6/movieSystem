@@ -7,6 +7,7 @@ import com.github.pagehelper.PageHelper;
 import com.viewer.moviesystem.domain.User;
 import com.viewer.moviesystem.domain.dto.LoginDTO;
 import com.viewer.moviesystem.domain.dto.RegisterDTO;
+import com.viewer.moviesystem.domain.dto.UserEditDTO;
 import com.viewer.moviesystem.domain.dto.UserListDTO;
 import com.viewer.moviesystem.domain.vo.UserDetailVO;
 import com.viewer.moviesystem.domain.vo.UserListVO;
@@ -100,6 +101,20 @@ public class UserServiceImpl implements IUserService {
         UserDetailVO userDetailVO = new UserDetailVO();
         BeanUtils.copyProperties(user, userDetailVO);
         return userDetailVO;
+    }
+
+    @Override
+    public int edit(UserEditDTO userEditDTO) {
+        User user = searchUser(userEditDTO.getId());
+
+        user.setUsername(userEditDTO.getUsername());
+        user.setPassword(user.getPassword());
+        user.setEmail(user.getEmail());
+
+        User newUser = new User();
+
+        BeanUtils.copyProperties(user, newUser);
+        return userMapper.updateById(newUser);
     }
 
     private User searchUser(Long id){

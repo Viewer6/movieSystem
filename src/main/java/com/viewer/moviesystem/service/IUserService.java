@@ -2,6 +2,7 @@ package com.viewer.moviesystem.service;
 
 import com.viewer.moviesystem.domain.dto.LoginDTO;
 import com.viewer.moviesystem.domain.dto.RegisterDTO;
+import com.viewer.moviesystem.domain.dto.UserEditDTO;
 import com.viewer.moviesystem.domain.dto.UserListDTO;
 import com.viewer.moviesystem.domain.vo.UserDetailVO;
 import com.viewer.moviesystem.domain.vo.UserListVO;
@@ -24,4 +25,6 @@ public interface IUserService {
     int deleteSelect(String ids);
 
     UserDetailVO detail(Long id);
+
+    int edit(UserEditDTO userEditDTO);
 }

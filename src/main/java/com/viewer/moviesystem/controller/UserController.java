@@ -4,6 +4,7 @@ import com.viewer.moviesystem.domain.Result;
 import com.viewer.moviesystem.domain.TableDataInfo;
 import com.viewer.moviesystem.domain.dto.LoginDTO;
 import com.viewer.moviesystem.domain.dto.RegisterDTO;
+import com.viewer.moviesystem.domain.dto.UserEditDTO;
 import com.viewer.moviesystem.domain.dto.UserListDTO;
 import com.viewer.moviesystem.domain.vo.UserDetailVO;
 import com.viewer.moviesystem.service.impl.UserServiceImpl;
@@ -77,5 +78,10 @@ public class UserController extends BaseController{
     @GetMapping("/getById")
     public UserDetailVO detail(Long id){
         return userService.detail(id);
+    }
+
+    @PutMapping("/edit")
+    public Result<Void> edit(@RequestBody UserEditDTO userEditDTO){
+        return getResult(userService.edit(userEditDTO));
     }
 }
