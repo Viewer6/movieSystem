@@ -5,6 +5,7 @@ import com.viewer.moviesystem.domain.TableDataInfo;
 import com.viewer.moviesystem.domain.dto.LoginDTO;
 import com.viewer.moviesystem.domain.dto.RegisterDTO;
 import com.viewer.moviesystem.domain.dto.UserListDTO;
+import com.viewer.moviesystem.domain.vo.UserDetailVO;
 import com.viewer.moviesystem.service.impl.UserServiceImpl;
 import com.viewer.moviesystem.utils.CaptchaUtil;
 import jakarta.servlet.http.HttpServletResponse;
@@ -71,5 +72,10 @@ public class UserController extends BaseController{
     @DeleteMapping("/deleteSelect")
     public Result<Void> deleteSelect(@RequestParam("ids") String ids){
         return getResult(userService.deleteSelect(ids));
+    }
+
+    @GetMapping("/getById")
+    public UserDetailVO detail(Long id){
+        return userService.detail(id);
     }
 }

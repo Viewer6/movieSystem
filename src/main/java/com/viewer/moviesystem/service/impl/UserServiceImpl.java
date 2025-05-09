@@ -8,6 +8,7 @@ import com.viewer.moviesystem.domain.User;
 import com.viewer.moviesystem.domain.dto.LoginDTO;
 import com.viewer.moviesystem.domain.dto.RegisterDTO;
 import com.viewer.moviesystem.domain.dto.UserListDTO;
+import com.viewer.moviesystem.domain.vo.UserDetailVO;
 import com.viewer.moviesystem.domain.vo.UserListVO;
 import com.viewer.moviesystem.emuns.ResultCode;
 import com.viewer.moviesystem.exception.ServiceException;
@@ -91,6 +92,14 @@ public class UserServiceImpl implements IUserService {
             throw new ServiceException(ResultCode.FAILED_USER_NOT_EXISTS);
         }
         return userMapper.deleteByIds(idList);
+    }
+
+    @Override
+    public UserDetailVO detail(Long id) {
+        User user = searchUser(id);
+        UserDetailVO userDetailVO = new UserDetailVO();
+        BeanUtils.copyProperties(user, userDetailVO);
+        return userDetailVO;
     }
 
     private User searchUser(Long id){
