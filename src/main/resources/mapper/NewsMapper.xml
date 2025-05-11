@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.viewer.moviesystem.mapper.NewsMapper">
-    <select id="selectNewsList" resultType="com.viewer.moviesystem.domain.vo.NewsListVO">
+    <select id="selectNewsList" resultType="com.viewer.moviesystem.domain.news.vo.NewsListVO">
         SELECT 
             n.id,
             n.news_title as newsTitle,

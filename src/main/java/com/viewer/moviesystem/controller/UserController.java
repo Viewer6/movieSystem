@@ -2,11 +2,12 @@ package com.viewer.moviesystem.controller;
 
 import com.viewer.moviesystem.domain.Result;
 import com.viewer.moviesystem.domain.TableDataInfo;
-import com.viewer.moviesystem.domain.dto.LoginDTO;
-import com.viewer.moviesystem.domain.dto.RegisterDTO;
-import com.viewer.moviesystem.domain.dto.UserEditDTO;
-import com.viewer.moviesystem.domain.dto.UserListDTO;
-import com.viewer.moviesystem.domain.vo.UserDetailVO;
+import com.viewer.moviesystem.domain.login.dto.LoginDTO;
+import com.viewer.moviesystem.domain.login.dto.RegisterDTO;
+import com.viewer.moviesystem.domain.user.dto.UserEditDTO;
+import com.viewer.moviesystem.domain.user.dto.UserListDTO;
+import com.viewer.moviesystem.domain.login.vo.LoginVO;
+import com.viewer.moviesystem.domain.user.vo.UserDetailVO;
 import com.viewer.moviesystem.service.impl.UserServiceImpl;
 import com.viewer.moviesystem.utils.CaptchaUtil;
 import jakarta.servlet.http.HttpServletResponse;
@@ -15,8 +16,6 @@ import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @Slf4j
 @RestController
@@ -27,9 +26,9 @@ public class UserController extends BaseController{
 
 
     @PostMapping("/login")
-    public void login(@RequestBody LoginDTO loginDTO){
+    public LoginVO login(@RequestBody LoginDTO loginDTO){
         log.info("登录用户名: {}, 密码: {}", loginDTO.getUsername(), loginDTO.getPassword());
-        userService.login(loginDTO);
+        return userService.login(loginDTO);
     }
 
     @PostMapping("/register")

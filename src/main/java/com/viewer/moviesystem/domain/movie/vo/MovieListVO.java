@@ -1,4 +1,4 @@
-package com.viewer.moviesystem.domain.vo;
+package com.viewer.moviesystem.domain.movie.vo;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;

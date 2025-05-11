@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.viewer.moviesystem.mapper.UserMapper">
 
-    <select id="selectUserList" resultType="com.viewer.moviesystem.domain.vo.UserListVO">
+    <select id="selectUserList" resultType="com.viewer.moviesystem.domain.user.vo.UserListVO">
         SELECT
         id,
         username,

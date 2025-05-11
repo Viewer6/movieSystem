@@ -1,4 +1,4 @@
-package com.viewer.moviesystem.domain.dto;
+package com.viewer.moviesystem.domain.user.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Pattern;

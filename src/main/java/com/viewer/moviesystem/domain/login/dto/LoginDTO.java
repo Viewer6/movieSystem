@@ -1,4 +1,4 @@
-package com.viewer.moviesystem.domain.dto;
+package com.viewer.moviesystem.domain.login.dto;
 
 import lombok.Data;
 import org.jetbrains.annotations.NotNull;

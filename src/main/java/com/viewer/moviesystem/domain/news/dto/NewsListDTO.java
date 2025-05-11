@@ -1,8 +1,7 @@
-package com.viewer.moviesystem.domain.dto;
+package com.viewer.moviesystem.domain.news.dto;
 
+import com.viewer.moviesystem.domain.dto.PageQueryDTO;
 import lombok.Data;
-
-import java.time.LocalDate;
 
 @Data
 public class NewsListDTO extends PageQueryDTO {

@@ -1,4 +1,4 @@
-package com.viewer.moviesystem.domain.dto;
+package com.viewer.moviesystem.domain.login.dto;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

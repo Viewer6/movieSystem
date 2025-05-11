@@ -14,7 +14,7 @@ public class BaseController {
 //    }
 //    return Result.error(null);
     public Result<Void> getResult(int result){
-        return result == 1 ? Result.success(null) : Result.fail(ResultCode.FAILED, null);
+        return result >= 1 ? Result.success(null) : Result.fail(ResultCode.FAILED, null);
     }
 
     //    if(result > 1){

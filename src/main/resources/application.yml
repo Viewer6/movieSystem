@@ -6,6 +6,10 @@ spring:
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB
 mybatis-plus:
   configuration: # 配置打印 MyBatis日志
     map-underscore-to-camel-case: true
@@ -31,3 +35,8 @@ captcha:
   session:
     key: SESSION_CAPTCHA_KEY
     date: SESSION_CAPTCHA_DATE
+
+file:
+  upload:
+    path: ${user.dir}/uploads
+    url-prefix: /uploads/**

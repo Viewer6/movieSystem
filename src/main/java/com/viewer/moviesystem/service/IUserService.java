@@ -1,16 +1,17 @@
 package com.viewer.moviesystem.service;
 
-import com.viewer.moviesystem.domain.dto.LoginDTO;
-import com.viewer.moviesystem.domain.dto.RegisterDTO;
-import com.viewer.moviesystem.domain.dto.UserEditDTO;
-import com.viewer.moviesystem.domain.dto.UserListDTO;
-import com.viewer.moviesystem.domain.vo.UserDetailVO;
-import com.viewer.moviesystem.domain.vo.UserListVO;
+import com.viewer.moviesystem.domain.login.dto.LoginDTO;
+import com.viewer.moviesystem.domain.login.dto.RegisterDTO;
+import com.viewer.moviesystem.domain.login.vo.LoginVO;
+import com.viewer.moviesystem.domain.user.dto.UserEditDTO;
+import com.viewer.moviesystem.domain.user.dto.UserListDTO;
+import com.viewer.moviesystem.domain.user.vo.UserDetailVO;
+import com.viewer.moviesystem.domain.user.vo.UserListVO;
 
 import java.util.List;
 
 public interface IUserService {
-    void login(LoginDTO loginDTO);
+    LoginVO login(LoginDTO loginDTO);
 
     int register(RegisterDTO registerDTO);
 

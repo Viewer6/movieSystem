@@ -1,9 +1,9 @@
 package com.viewer.moviesystem.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.viewer.moviesystem.domain.Movie;
-import com.viewer.moviesystem.domain.dto.MovieListDTO;
-import com.viewer.moviesystem.domain.vo.MovieListVO;
+import com.viewer.moviesystem.domain.movie.Movie;
+import com.viewer.moviesystem.domain.movie.dto.MovieListDTO;
+import com.viewer.moviesystem.domain.movie.vo.MovieListVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

@@ -1,4 +1,4 @@
-package com.viewer.moviesystem.domain.vo;
+package com.viewer.moviesystem.domain.user.vo;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
@@ -17,6 +17,8 @@ public class UserListVO {
     private Integer status;       // 状态（0-禁用，1-正常）
 
     public String getRoleCN() {
-        return this.role == 0 ? "管理员" : "普通用户";
+        if (role == 0) return "管理员";
+        else if (role == 1) return "普通用户";
+        else return "超级管理员";
     }
 }

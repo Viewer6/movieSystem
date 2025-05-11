@@ -1,5 +1,6 @@
-package com.viewer.moviesystem.domain.dto;
+package com.viewer.moviesystem.domain.user.dto;
 
+import com.viewer.moviesystem.domain.dto.PageQueryDTO;
 import lombok.Data;
 
 @Data

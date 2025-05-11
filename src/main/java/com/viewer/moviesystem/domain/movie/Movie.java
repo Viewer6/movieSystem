@@ -1,14 +1,15 @@
-package com.viewer.moviesystem.domain;
+package com.viewer.moviesystem.domain.movie;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.viewer.moviesystem.domain.BaseEntity;
 import lombok.Data;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
-public class Movie extends BaseEntity{
+public class Movie extends BaseEntity {
     @TableId(type = IdType.ASSIGN_ID)
     private Long id;
     private String movieName;

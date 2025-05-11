@@ -1,4 +1,4 @@
-package com.viewer.moviesystem.domain.vo;
+package com.viewer.moviesystem.domain.movieCategory.vo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;

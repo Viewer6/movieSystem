@@ -4,13 +4,14 @@ import cn.hutool.core.collection.CollectionUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.github.pagehelper.PageHelper;
-import com.viewer.moviesystem.domain.User;
-import com.viewer.moviesystem.domain.dto.LoginDTO;
-import com.viewer.moviesystem.domain.dto.RegisterDTO;
-import com.viewer.moviesystem.domain.dto.UserEditDTO;
-import com.viewer.moviesystem.domain.dto.UserListDTO;
-import com.viewer.moviesystem.domain.vo.UserDetailVO;
-import com.viewer.moviesystem.domain.vo.UserListVO;
+import com.viewer.moviesystem.domain.login.vo.LoginVO;
+import com.viewer.moviesystem.domain.user.User;
+import com.viewer.moviesystem.domain.login.dto.LoginDTO;
+import com.viewer.moviesystem.domain.login.dto.RegisterDTO;
+import com.viewer.moviesystem.domain.user.dto.UserEditDTO;
+import com.viewer.moviesystem.domain.user.dto.UserListDTO;
+import com.viewer.moviesystem.domain.user.vo.UserDetailVO;
+import com.viewer.moviesystem.domain.user.vo.UserListVO;
 import com.viewer.moviesystem.emuns.ResultCode;
 import com.viewer.moviesystem.exception.ServiceException;
 import com.viewer.moviesystem.mapper.UserMapper;
@@ -28,7 +29,7 @@ public class UserServiceImpl implements IUserService {
     @Autowired
     private UserMapper userMapper;
     @Override
-    public void login(LoginDTO loginDTO) {
+    public LoginVO login(LoginDTO loginDTO) {
         User user = userMapper.selectOne(new LambdaQueryWrapper<User>()
                 .eq(User::getUsername, loginDTO.getUsername())
                 .eq(User::getStatus, 1));
@@ -38,7 +39,7 @@ public class UserServiceImpl implements IUserService {
         if(!user.getPassword().equals(loginDTO.getPassword())){
             throw new ServiceException(ResultCode.FAILED_LOGIN);
         }
-
+        return new LoginVO(user.getRole(), user.getUsername());
     }
 
     @Override
@@ -110,6 +111,7 @@ public class UserServiceImpl implements IUserService {
         user.setUsername(userEditDTO.getUsername());
         user.setPassword(user.getPassword());
         user.setEmail(user.getEmail());
+        user.setRole(userEditDTO.getRole());
 
         User newUser = new User();
 
